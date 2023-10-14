@@ -10,7 +10,7 @@
 
 ## 工作流程图
 
-[![img](https://user-images.githubusercontent.com/117554874/266471478-7116ec22-125f-4689-8ab5-fb33f2a9fb28.png)](https://user-images.githubusercontent.com/117554874/266471478-7116ec22-125f-4689-8ab5-fb33f2a9fb28.png)
+[![img](https://github.com/ROBINRUGAN/uu-attendance/blob/main/public/%E6%B5%81%E7%A8%8B%E5%9B%BE.png)](https://github.com/ROBINRUGAN/uu-attendance/blob/main/public/%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
 
 ## 技术栈与项目亮点
 
