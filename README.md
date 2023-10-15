@@ -2,13 +2,15 @@
 
 ## 项目功能介绍
 
-- 本项目是一个跨平台考勤系统，主要提供课前请假、教师审批、考勤申诉、督导点名、定位签到、指定督导等功能，分为学生端/督导端，和教师端。学生/督导端实现课表查看、课前请假、考勤申诉、定位签到、督导操作等功能，采用安卓原生技术，以Kotlin为主要开发语言进行开发。
-- 教师端仓库地址：https://github.com/ROBINRUGAN/uu-attendance
-- 后端仓库地址：https://github.com/flying-pig-z/uuAttendance
+> 本项目是一个跨平台考勤系统，主要提供课前请假、教师审批、考勤申诉、督导点名、定位签到、指定督导等功能，分为学生端/督导端，和教师端。学生/督导端实现课表查看、课前请假、考勤申诉、定位签到、督导操作等功能，采用安卓原生技术，以Kotlin为主要开发语言进行开发。
+>
+> 教师端仓库地址：https://github.com/ROBINRUGAN/uu-attendance
+>
+> 后端仓库地址：https://github.com/flying-pig-z/uuAttendance
 
 ## 工作流程图
 
-[![img](https://user-images.githubusercontent.com/117554874/266471478-7116ec22-125f-4689-8ab5-fb33f2a9fb28.png)](https://user-images.githubusercontent.com/117554874/266471478-7116ec22-125f-4689-8ab5-fb33f2a9fb28.png)
+[![img](https://github.com/ROBINRUGAN/uu-attendance/blob/main/public/%E6%B5%81%E7%A8%8B%E5%9B%BE.png)](https://github.com/ROBINRUGAN/uu-attendance/blob/main/public/%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
 
 ## 技术栈与项目亮点
 
@@ -24,7 +26,8 @@
 
 ## 目录结构介绍
 
-WorkingDirection/  
+```
+uuAttendance/  
 ├────.gitignore  
 ├────build.gradle  
 ├────libs/  
@@ -35,172 +38,121 @@ WorkingDirection/
 │    │    │    └────com/  
 │    │    │    │    └────uu/  
 │    │    │    │    │    └────attendance/  
-│    │    │    │    │    │    └────ExampleInstrumentedTest.kt  
+│    │    │    │    │    │    └────ExampleInstrumentedTest.kt                           //测试类
 │    ├────main/  
 │    │    ├────AndroidManifest.xml  
 │    │    ├────java/  
 │    │    │    └────com/  
 │    │    │    │    └────uu/  
 │    │    │    │    │    └────attendance/  
-│    │    │    │    │    │    ├────base/											        		抽象基类  
-│    │    │    │    │    │    │    ├────dto/  
-│    │    │    │    │    │    │    └────ui/  
+│    │    │    │    │    │    ├────base/                                                //抽象基类
+│    │    │    │    │    │    │    ├────dto/                                            //数据类
+│    │    │    │    │    │    │    └────ui/                                             //界面相关
 │    │    │    │    │    │    ├────model/  
-│    │    │    │    │    │    │    ├────Constants.kt								    			常量  
-│    │    │    │    │    │    │    └────network/									    			网络请求相关  
-│    │    │    │    │    │    │    │    ├────api/												    请求接口封装  
-│    │    │    │    │    │    │    │    ├────dto/											    	数据类  
-│    │    │    │    │    │    │    │    └────service/									    		请求服务  
+│    │    │    │    │    │    │    ├────Constants.kt                                    //常量  
+│    │    │    │    │    │    │    └────network/                                        //网络请求相关  
+│    │    │    │    │    │    │    │    ├────api/                                       //请求接口封装  
+│    │    │    │    │    │    │    │    ├────dto/                                       //数据类  
+│    │    │    │    │    │    │    │    └────service/                                   //请求服务  
 │    │    │    │    │    │    ├────MyApplication.kt  
-│    │    │    │    │    │    ├────ui/													        	界面相关  
-│    │    │    │    │    │    │    ├────common/											           	通用组件  
+│    │    │    │    │    │    ├────ui/                                                  //界面相关  
+│    │    │    │    │    │    │    ├────common/                                         //通用组件  
 │    │    │    │    │    │    │    │    └────view/  
-│    │    │    │    │    │    │    │    │    └────RoundImageView.kt							    	自实现圆形图片  
-│    │    │    │    │    │    │    ├────coursetable/										    	课程表tab部分  
+│    │    │    │    │    │    │    │    │    └────RoundImageView.kt                     //自实现圆形图片  
+│    │    │    │    │    │    │    ├────coursetable/                                    //课程表tab部分  
 │    │    │    │    │    │    │    │    ├────activity/  
-│    │    │    │    │    │    │    │    │    └────NewLeaveApplicationActivity.kt					请假  
+│    │    │    │    │    │    │    │    │    └────NewLeaveApplicationActivity.kt        //请假申请  
 │    │    │    │    │    │    │    │    ├────adapter/  
-│    │    │    │    │    │    │    │    │    └────CourseTableAdapter.kt						    	课程表适应器  
-│    │    │    │    │    │    │    │    ├────fragment/  
+│    │    │    │    │    │    │    │    │    └────CourseTableAdapter.kt                 //课程表适配器
+│    │    │    │    │    │    │    │    ├────fragment/                                  //课程表界面
 │    │    │    │    │    │    │    │    │    ├────CourseTableFragment.kt  
 │    │    │    │    │    │    │    │    │    └────CourseTableItemFragment.kt  
-│    │    │    │    │    │    │    │    └────view/  
-│    │    │    │    │    │    │    │    │    └────CourseDetailPopup.kt								课程弹窗  
-│    │    │    │    │    │    │    ├────login/												    	登录部分  
+│    │    │    │    │    │    │    │    └────view/                                      //课程表自定义view
+│    │    │    │    │    │    │    │    │    └────CourseDetailPopup.kt
+│    │    │    │    │    │    │    ├────login/登录部分  
 │    │    │    │    │    │    │    │    └────activity/  
-│    │    │    │    │    │    │    │    │    └────LoginActivity.kt  
-│    │    │    │    │    │    │    ├────main/													    主界面部分  
-│    │    │    │    │    │    │    │    ├────activity/  
-│    │    │    │    │    │    │    │    │    └────MainActivity.kt  
+│    │    │    │    │    │    │    │    │    └────LoginActivity.kt                      //登录界面
+│    │    │    │    │    │    │    ├────main/主界面部分  
+│    │    │    │    │    │    │    │    ├────activity/    
+│    │    │    │    │    │    │    │    │    └────MainActivity.kt                       //主界面
 │    │    │    │    │    │    │    │    └────viewmodel/  
-│    │    │    │    │    │    │    │    │    └────MainViewModel.kt								    主界面公用数据存储  
-│    │    │    │    │    │    │    ├────me/													        我的tab部分  
+│    │    │    │    │    │    │    │    │    └────MainViewModel.kt                      //主界面公用数据存储  
+│    │    │    │    │    │    │    ├────me/                                             //我的tab部分  
 │    │    │    │    │    │    │    │    ├────activity/  
-│    │    │    │    │    │    │    │    │    ├────AttendanceAppealActivity.kt						考勤申诉查看  
-│    │    │    │    │    │    │    │    │    ├────ChangePwdActivity.kt							    修改密码  
-│    │    │    │    │    │    │    │    │    ├────LeaveApplicationActivity.kt						请假申请查看  
-│    │    │    │    │    │    │    │    │    └────RulesActivity.kt									考勤规则  
+│    │    │    │    │    │    │    │    │    ├────AttendanceAppealActivity.kt           //考勤申诉查看  
+│    │    │    │    │    │    │    │    │    ├────ChangePwdActivity.kt                  //修改密码  
+│    │    │    │    │    │    │    │    │    ├────LeaveApplicationActivity.kt           //请假申请查看  
+│    │    │    │    │    │    │    │    │    └────RulesActivity.kt                      //考勤规则  
 │    │    │    │    │    │    │    │    ├────adapter/  
-│    │    │    │    │    │    │    │    │    ├────ApplicationListAdapter.kt  
-│    │    │    │    │    │    │    │    │    └────AttendanceAppealAdapter.kt  
+│    │    │    │    │    │    │    │    │    ├────ApplicationListAdapter.kt             //请假申请列表适配器
+│    │    │    │    │    │    │    │    │    └────AttendanceAppealAdapter.kt            //考勤申诉列表适配器
 │    │    │    │    │    │    │    │    ├────fragment/  
-│    │    │    │    │    │    │    │    │    └────MeFragment.kt  
+│    │    │    │    │    │    │    │    │    └────MeFragment.kt                         //我的界面
 │    │    │    │    │    │    │    │    └────view/  
-│    │    │    │    │    │    │    │    │    └────ItemFunctionEntryView.kt							功能项view  
-│    │    │    │    │    │    │    ├────signin/													    签到tab部分  
-│    │    │    │    │    │    │    │    ├────fragment/  
-│    │    │    │    │    │    │    │    │    └────SigninFragment.kt  
-│    │    │    │    │    │    │    │    ├────view/  
-│    │    │    │    │    │    │    │    │    └────MapContainerLayout.kt  
+│    │    │    │    │    │    │    │    │    └────ItemFunctionEntryView.kt              //功能项view  
+│    │    │    │    │    │    │    ├────signin/                                         //签到tab部分  
+│    │    │    │    │    │    │    │    ├────fragment/   
+│    │    │    │    │    │    │    │    │    └────SigninFragment.kt                     //签到界面
+│    │    │    │    │    │    │    │    ├────view/   
+│    │    │    │    │    │    │    │    │    └────MapContainerLayout.kt                 //地图容器
 │    │    │    │    │    │    │    │    └────viewmodel/  
-│    │    │    │    │    │    │    │    │    └────SigninViewModel.kt  
-│    │    │    │    │    │    │    └────supervise/												    督导tab部分  
+│    │    │    │    │    │    │    │    │    └────SigninViewModel.kt                    //签到界面数据存储
+│    │    │    │    │    │    │    └────supervise/                                      //督导tab部分  
 │    │    │    │    │    │    │    │    ├────activity/  
-│    │    │    │    │    │    │    │    │    └────SuperviseDetailActivity.kt						督导详情  
+│    │    │    │    │    │    │    │    │    └────SuperviseDetailActivity.kt            //督导详情  
 │    │    │    │    │    │    │    │    ├────adapter/  
-│    │    │    │    │    │    │    │    │    ├────SuperviseCardAdapter.kt  
-│    │    │    │    │    │    │    │    │    ├────SuperviseListAdapter.kt  
-│    │    │    │    │    │    │    │    │    ├────SuperviseStudentDetailAdapter.kt  
-│    │    │    │    │    │    │    │    │    └────ViewPagerSuperviseDetailAdapter.kt  
+│    │    │    │    │    │    │    │    │    ├────SuperviseCardAdapter.kt               //督导卡片适配器
+│    │    │    │    │    │    │    │    │    ├────SuperviseListAdapter.kt               //督导列表适配器
+│    │    │    │    │    │    │    │    │    ├────SuperviseStudentDetailAdapter.kt      //督导学生详情适配器
+│    │    │    │    │    │    │    │    │    └────ViewPagerSuperviseDetailAdapter.kt    //督导详情viewpager适配器
 │    │    │    │    │    │    │    │    ├────fragment/  
-│    │    │    │    │    │    │    │    │    ├────SuperviseCardFragment.kt  
-│    │    │    │    │    │    │    │    │    ├────SuperviseFragment.kt  
-│    │    │    │    │    │    │    │    │    └────SuperviseListFragment.kt  
+│    │    │    │    │    │    │    │    │    ├────SuperviseCardFragment.kt              //督导卡片界面
+│    │    │    │    │    │    │    │    │    ├────SuperviseFragment.kt                  //督导界面
+│    │    │    │    │    │    │    │    │    └────SuperviseListFragment.kt              //督导列表界面
 │    │    │    │    │    │    │    │    ├────view/  
-│    │    │    │    │    │    │    │    │    └────cardswipelayout/									卡片交互实现  
-│    │    │    │    │    │    │    │    │    │    ├────CardConfig.kt  
-│    │    │    │    │    │    │    │    │    │    ├────CardItemTouchHelperCallback.kt  
-│    │    │    │    │    │    │    │    │    │    ├────CardLayoutManager.kt  
-│    │    │    │    │    │    │    │    │    │    └────OnSwipeListener.kt  
+│    │    │    │    │    │    │    │    │    └────cardswipelayout                       //卡片交互实现  
+│    │    │    │    │    │    │    │    │    │    ├────CardConfig.kt                    //卡片配置
+│    │    │    │    │    │    │    │    │    │    ├────CardItemTouchHelperCallback.kt   //卡片交互回调
+│    │    │    │    │    │    │    │    │    │    ├────CardLayoutManager.kt             //卡片布局管理器
+│    │    │    │    │    │    │    │    │    │    └────OnSwipeListener.kt               //卡片交互监听
 │    │    │    │    │    │    │    │    └────viewmodel/  
-│    │    │    │    │    │    │    │    │    └────SuperviseViewModel.kt  
-│    │    │    │    │    │    └────util/															工具类  
-│    │    │    │    │    │    │    ├────ConnectionUtil.kt  
-│    │    │    │    │    │    │    ├────ConvertUtil.kt  
-│    │    │    │    │    │    │    ├────CoroutineUtil.kt  
-│    │    │    │    │    │    │    ├────CrashUtil.kt  
-│    │    │    │    │    │    │    ├────KeyboardUtil.kt  
-│    │    │    │    │    │    │    ├────KVUtil.kt  
-│    │    │    │    │    │    │    ├────LatLngUtil.kt  
-│    │    │    │    │    │    │    ├────LogUtil.kt  
-│    │    │    │    │    │    │    └────UriPathHelper.kt  
-│    │    └────res/                                                                                 布局与资源  
-│    │    │    ├────drawable/  
-│    │    │    │    ├────bg_btn_signin_nosign.xml  
-│    │    │    │    ├────bg_btn_signin_notsigned.xml  
-│    │    │    │    ├────bg_btn_signin_signed.xml  
-│    │    │    │    ├────bg_corner_10.xml  
-│    │    │    │    ├────bg_corner_20.xml  
-│    │    │    │    ├────bg_corner_35.xml  
-│    │    │    │    ├────bg_corner_bottom_35.xml  
-│    │    │    │    ├────bg_edittext.xml  
-│    │    │    │    ├────bg_edittext_checked.xml  
-│    │    │    │    ├────bg_edittext_unchecked.xml  
-│    │    │    │    ├────bg_login.webp  
-│    │    │    │    ├────bg_me_tv_identity.xml  
-│    │    │    │    ├────bg_page.xml  
-│    │    │    │    ├────bg_round_white.xml  
-│    │    │    │    ├────bg_supervise_texthint.xml  
-│    │    │    │    ├────ic_tab_coursetable.xml  
-│    │    │    │    ├────ic_tab_me.xml  
-│    │    │    │    ├────ic_tab_signin.xml  
-│    │    │    │    └────ic_tab_supervise.xml  
-│    │    │    ├────drawable-mdpi/  
-│    │    │    ├────drawable-xhdpi/  
+│    │    │    │    │    │    │    │    │    └────SuperviseViewModel.kt                 //督导界面数据存储
+│    │    │    │    │    │    └────util/工具类  
+│    │    │    │    │    │    │    ├────ConnectionUtil.kt                               //网络连接工具类
+│    │    │    │    │    │    │    ├────ConvertUtil.kt                                  //转换工具类
+│    │    │    │    │    │    │    ├────CoroutineUtil.kt                                //协程工具类
+│    │    │    │    │    │    │    ├────CrashUtil.kt                                    //崩溃工具类
+│    │    │    │    │    │    │    ├────KeyboardUtil.kt                                 //键盘工具类
+│    │    │    │    │    │    │    ├────KVUtil.kt                                       //键值对工具类
+│    │    │    │    │    │    │    ├────LatLngUtil.kt                                   //经纬度工具类
+│    │    │    │    │    │    │    ├────LogUtil.kt                                      //日志工具类
+│    │    │    │    │    │    │    └────UriPathHelper.kt                                //uri工具类
+│    │    └────res/                                                                     //布局与资源  
+│    │    │    ├────drawable/                                                           //图片资源
+│    │    │    ├────drawable-mdpi/                                                   
+│    │    │    ├────drawable-xhdpi/   
 │    │    │    ├────drawable-xxhdpi/  
 │    │    │    ├────drawable-xxxhdpi/  
-│    │    │    ├────layout/  
-│    │    │    │    ├────activity_attendance_appeal.xml  
-│    │    │    │    ├────activity_change_pwd.xml  
-│    │    │    │    ├────activity_leave_application.xml  
-│    │    │    │    ├────activity_login.xml  
-│    │    │    │    ├────activity_main.xml  
-│    │    │    │    ├────activity_new_leave_application.xml  
-│    │    │    │    ├────activity_rules.xml  
-│    │    │    │    ├────activity_supervise_detail.xml  
-│    │    │    │    ├────fragment_coursetable.xml  
-│    │    │    │    ├────fragment_coursetable_item.xml  
-│    │    │    │    ├────fragment_me.xml  
-│    │    │    │    ├────fragment_signin.xml  
-│    │    │    │    ├────fragment_supervise.xml  
-│    │    │    │    ├────fragment_supervise_card.xml  
-│    │    │    │    ├────fragment_supervise_list.xml  
-│    │    │    │    ├────item_attendance_appeal.xml  
-│    │    │    │    ├────item_function_entry.xml  
-│    │    │    │    ├────item_leave_application.xml  
-│    │    │    │    ├────item_supervise_card.xml  
-│    │    │    │    ├────item_supervise_class.xml  
-│    │    │    │    ├────item_supervise_person.xml  
-│    │    │    │    └────popup_course_detail.xml  
-│    │    │    ├────menu/  
-│    │    │    │    └────bottom_nav_menu.xml  
-│    │    │    ├────mipmap-hdpi/  
-│    │    │    │    ├────ic_launcher.webp  
-│    │    │    │    └────ic_launcher_round.webp  
-│    │    │    ├────mipmap-mdpi/  
-│    │    │    │    ├────ic_launcher.webp  
-│    │    │    │    └────ic_launcher_round.webp  
+│    │    │    ├────layout/                                                             //布局文件
+│    │    │    ├────menu/                                                               //菜单布局配置文件
+│    │    │    ├────mipmap-hdpi/                                                        //图标资源
+│    │    │    ├────mipmap-mdpi/   
 │    │    │    ├────mipmap-xhdpi/  
-│    │    │    │    ├────ic_launcher.webp  
-│    │    │    │    └────ic_launcher_round.webp  
 │    │    │    ├────mipmap-xxhdpi/  
-│    │    │    │    ├────ic_launcher.webp  
-│    │    │    │    └────ic_launcher_round.webp  
 │    │    │    ├────mipmap-xxxhdpi/  
-│    │    │    │    ├────ic_launcher.webp  
-│    │    │    │    └────ic_launcher_round.webp  
-│    │    │    ├────values/  
-│    │    │    │    ├────attr.xml  
-│    │    │    │    ├────colors.xml  
-│    │    │    │    ├────strings.xml  
-│    │    │    │    └────themes.xml  
+│    │    │    ├────values/   
+│    │    │    │    ├────attr.xml                                                       //属性配置文件
+│    │    │    │    ├────colors.xml                                                     //颜色配置文件 
+│    │    │    │    ├────strings.xml                                                    //字符串配置文件
+│    │    │    │    └────themes.xml                                                     //主题配置文件
 │    │    │    └────xml/  
-│    │    │    │    ├────backup_rules.xml  
-│    │    │    │    └────data_extraction_rules.xml  
+│    │    │    │    ├────backup_rules.xml                                               //备份规则配置文件
+│    │    │    │    └────data_extraction_rules.xml                                      //数据提取规则配置文件
 │    └────test/  
 │    │    └────java/  
 │    │    │    └────com/  
 │    │    │    │    └────uu/  
 │    │    │    │    │    └────attendance/  
-│    │    │    │    │    │    └────ExampleUnitTest.kt  
+│    │    │    │    │    │    └────ExampleUnitTest.kt                                   //测试类
 └────tree.py
+```
